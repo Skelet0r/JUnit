@@ -3,20 +3,43 @@ package calculator;
 public class Calculator 
 {
 
-	public static int add (int a, int b) 
+	private int ans;
+	
+	public Calculator()
 	{
-		return a + b;
+		ans = 0;
 	}
 	
-	public static int sub (int a, int b) 
+	// Initial add.
+	public int add (int a, int b) 
 	{
-		return a - b;
+		ans = a + b;
+		return ans;
 	}
 	
-	public static void main (String args[]) 
+	// Initial subtract.
+	public int sub (int a, int b) 
 	{
-		int a = 3, b = 2;
-        int res = add (a, b);
-        System.out.println("3 + 2 = " + res);
+		ans = a - b;
+		return ans;
+	}
+	
+	// Add with original and new value.
+	public int add(int v)
+	{
+		ans += v;
+		return ans;
+	}
+	
+	// Subtract with original and new value.
+	public int sub(int v)
+	{
+		ans -= v;
+		return ans;
+	}
+	
+	public int ans() 
+	{
+		return ans;
 	}
 }

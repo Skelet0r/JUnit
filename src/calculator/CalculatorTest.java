@@ -2,26 +2,38 @@ package calculator;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class CalculatorTest
 {
+	
+	Calculator calc;
+	
+	@Before
+	public void initialValues()
+	{
+		System.out.println("Creating Calculator object.");
+		calc = new Calculator();
+	}
 
 	@Test
 	public void testAdd() 
 	{
-		int rest = Calculator.add(2, 3);
-		int espe = 5; // 2 + 3 = 5.
+		System.out.println("Test add.");
+		int result = calc.add(3, 2);
+		int esp = 5;
 		
-		assertEquals(espe, rest);
+		assertEquals(esp, result);
 	}
 	
 	@Test
-	public void testSub() 
+	public void testSubs() 
 	{
-		int rest = Calculator.sub(3, 2);
-		int espe = 1; // 3 - 2 = 1.
+		System.out.println("Test sub.");
+		int result = calc.sub(3, 2);
+		int esp = 1;
 		
-		assertEquals(espe, rest);
+		assertEquals(esp, result);
 	}
 }
